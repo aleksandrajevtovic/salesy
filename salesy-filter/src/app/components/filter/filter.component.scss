@@ -1,0 +1,101 @@
+.page {
+  &__box {
+    .right {
+      font-size: 0.9rem;
+      .mat-mdc-button {
+        background-color: var(--accent-light);
+        margin-right: 0.5rem;
+        color: var(--white);
+        padding: 0 1rem;
+      }
+      .mat-mdc-outlined-button {
+        border-color: var(--accent-light);
+        color: var(--black);
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: var(--accent-green);
+          border-radius: var(--radius-round);
+          margin-right: 8px;
+        }
+        &::after {
+          @extend .material-icons !optional;
+          font-family: var(--ffMaterial);
+          content: "keyboard_arrow_down";
+          color: var(--black);
+          font-size: 1.2rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.mat-mdc-card {
+  box-shadow: none;
+  border: 1px solid var(--light-blue);
+  border-radius: var(--radius-sm);
+}
+.mat-mdc-card-header {
+  padding: 16px;
+  background-color: var(--pale-blue);
+}
+.mat-mdc-card-title {
+  color: #474d57;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.mat-mdc-card-content {
+  padding: 16px;
+}
+
+input {
+  cursor: pointer;
+  border-radius: 20px;
+  height: 32px;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  background-image: url(/assets/images/plus-circle.svg);
+  background-repeat: no-repeat;
+  background-position: 20%;
+  background-size: 20px;
+  border: 2px solid var(--accent-light);
+  text-align: center;
+  color: var(--accent-light);
+  &:focus {
+    outline: none;
+  }
+}
+::placeholder {
+  color: var(--accent-light) !important;
+  opacity: 1;
+  margin-left: 2rem;
+  padding-left: 2rem;
+}
+.btn-wrap {
+  display: flex;
+  justify-content: end;
+}
+
+// "speichern" button
+.btn.btn-save {
+  background-color: var(--accent-royal);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.6rem;
+}
+
+// reset chip
+// change bg color of the chip anf font size of the text
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+  background-color: var(--accent-light);
+  font-size: 0.9rem;
+}
+
+//outline/avatar chip with a plus icon
+.mat-mdc-standard-chip.chip-outline {
+  background-color: transparent;
+  border: 2px solid var(--accent-light);
+}

@@ -1,0 +1,28 @@
+.alert {
+  background-color: #CFE6FA;
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  .mat-icon {
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+  }
+}
+.btn-close {
+  color: var(--accent-light);
+  opacity: 1;
+    width: 2rem;
+    height: 0.5rem;
+    top: -0.3rem;
+    background: transparent;
+    &:focus {
+      outline: 0;
+      border: none;
+      box-shadow: none;
+    }
+    &:hover {
+      opacity: .6;
+    }
+}

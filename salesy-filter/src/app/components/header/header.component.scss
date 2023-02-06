@@ -1,0 +1,70 @@
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(90deg, #2744cd 0%, #1475dc 48.09%, #02a7eb 100%);
+}
+.user-btn-wrap {
+  ul {
+    li {
+      list-style-type: none;
+      .mdc-button {
+        min-width: 0;
+      }
+    }
+  }
+}
+button {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+.user {
+  font-size: 0.8rem;
+  span {
+    color: var(--white);
+    &::after {
+      @extend .material-icons !optional;
+      font-family: var(--ffMaterial);
+      content: "keyboard_arrow_down";
+      font-size: 1.1rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  }
+}
+.user-image {
+  width: 50px;
+  height: 100%;
+}
+.user-image-icon {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+.menu-icon {
+  vertical-align: top;
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+::ng-deep {
+  .mat-mdc-menu-content {
+    width: 160px;
+  }
+}
+
+.mat-mdc-menu-item .mat-icon-no-color,
+.mat-mdc-menu-submenu-icon {
+  // vertical-align: middle;
+  margin-right: 1rem;
+  color: var(--icon-blue);
+  font-size: 20px;
+}
+
+.mat-mdc-button,
+.mat-mdc-outlined-button {
+  --mat-mdc-button-persistent-ripple-color: transparent;
+}

@@ -1,0 +1,47 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+    <div class="user-btn-wrap mr-2 ml-auto">
+      <ul class="d-flex mb-2">
+        <li>
+          <button mat-button [disableRipple]="true" class="user mt-2 d-flex align-items-center">
+            <mat-icon class="user-image-icon ml-1">help_outline</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-button [disableRipple]="true" class="user mt-2 d-flex align-items-center">
+            <mat-icon class="user-image-icon ml-1">settings</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button
+          [disableRipple]="true"
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="user mt-2 d-flex align-items-center"
+          >
+            <img
+              class="img-fluid"
+              src="/assets/images/user.png"
+              alt="User image"
+              class="user-image mr-1"
+            />
+            <span> Devid John</span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item class="header-dropdown-menu-icon">
+              <mat-icon>edit</mat-icon>
+              Edit profile
+            </button>
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

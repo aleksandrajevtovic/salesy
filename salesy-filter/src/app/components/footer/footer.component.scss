@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  position: sticky;
+  top: 100%;
+  border-top: 1px solid var(--light-blue);
+  padding: 1rem 1.8rem;
+  font-size: 0.8rem;
+  color: #747c99;
+}

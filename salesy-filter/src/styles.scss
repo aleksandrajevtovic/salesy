@@ -1,0 +1,181 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$salesy-filter-primary: mat.define-palette(mat.$indigo-palette);
+$salesy-filter-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$salesy-filter-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$salesy-filter-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $salesy-filter-primary,
+      accent: $salesy-filter-accent,
+      warn: $salesy-filter-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($salesy-filter-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --accent-royal: #293fcc;
+  --accent-light: #1083e5;
+  --light-blue: #e3eafc;
+  --pale-blue: #f8fafd;
+  --icon-blue: #7b97be;
+  --black: #414852;
+  --gray: #747c99;
+  --white: #ffffff;
+  --accent-green: #07dd83;
+  --ff: "Jost", sans-serif;
+  --ffMaterial: "Material Icons";
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-round: 50%;
+}
+
+html,
+body {
+  height: 100%;
+}
+html {
+  position: relative;
+}
+body {
+  margin: 0;
+  font-family: var(--ff);
+}
+
+// inner content-all pages
+.inner-content {
+  padding: 0 1.8rem;
+}
+.page {
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      h3 {
+        font-size: 1.5rem;
+        color: var(--black);
+      }
+    }
+  }
+}
+
+// dropdown menu list
+.mat-mdc-menu-item .mdc-list-item__primary-text {
+  font-size: 0.9rem;
+  color: var(--black);
+}
+// dropdown menu list
+.mat-mdc-menu-item:hover:not([disabled]),
+.mat-mdc-menu-item.cdk-program-focused:not([disabled]),
+.mat-mdc-menu-item.cdk-keyboard-focused:not([disabled]),
+.mat-mdc-menu-item-highlighted:not([disabled]) {
+  background: var(--accent-light);
+  &:hover {
+    color: var(--white);
+    mat-icon,
+    .mdc-list-item__primary-text {
+      color: var(--white);
+    }
+  }
+}
+// size of icons inside second dropdown menu
+.mat-mdc-menu-item .mat-icon-no-color,
+.mat-mdc-menu-submenu-icon {
+  font-size: 20px;
+}
+// color of an icon inside second dropdown menu
+.red-offline {
+  color: #c4314b !important;
+}
+// color of an icon inside second dropdown menu
+.green-online {
+  color: #92c353 !important;
+}
+
+// change text color of the chip
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: var(--white) !important;
+}
+
+// change text color of the outline chip
+.mat-mdc-standard-chip.chip-outline .mdc-evolution-chip__text-label {
+  color: var(--accent-light) !important;
+}
+
+//make padding right of the plus icon inside chip smaller
+.mdc-evolution-chip--with-avatar.mdc-evolution-chip--with-primary-graphic
+  .mdc-evolution-chip__graphic {
+  padding-right: 2px !important;
+}
+
+.mdc-evolution-chip--with-avatar.mdc-evolution-chip--with-primary-graphic .mdc-evolution-chip__action--primary {
+  padding-right: 16px !important;
+}
+
+// chip padding left, text
+.mat-mdc-standard-chip .mdc-evolution-chip__cell--primary {
+  padding-left: 0.5rem;
+}
+
+// x icon inside chip
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__icon--trailing {
+  color: var(--white) !important;
+  opacity: 1;
+  font-size: 0.8rem;
+}
+
+// x icon inside chip
+.mat-mdc-standard-chip.mdc-evolution-chip--with-trailing-action
+  .mdc-evolution-chip__action--trailing {
+  padding-right: 12px !important;
+}
+
+// position if the x icon in the center of the chip
+.mat-mdc-standard-chip .mdc-evolution-chip__icon--trailing {
+  height: 13px !important;
+  width: 13px !important;
+}
+
+// input reset
+input.mat-mdc-chip-input {
+  flex: initial !important;
+  min-width: 28%;
+}
+
+// space between each card of filter
+.mat-mdc-card {
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// side nav list item/text color of the link
+.mdc-list-item__primary-text {
+  color: var(--black);
+}

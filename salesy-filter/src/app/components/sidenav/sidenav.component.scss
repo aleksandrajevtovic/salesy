@@ -1,0 +1,59 @@
+.logo {
+  text-align: center;
+  img {
+    width: 200px;
+  }
+}
+.sidenav-subheader {
+  color: #7f8793;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+.mdc-list {
+  padding: 0 1rem;
+}
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 1rem;
+  color: var(--icon-blue);
+  font-size: 20px;
+}
+.mat-divider {
+  border-color: #c2d6f3;
+  border-top-width: 2px;
+}
+.link-list-item {
+  font-size: 0.9rem;
+}
+a.mdc-list-item {
+  border-radius: var(--radius-sm);
+  margin: 0.2rem 0;
+  svg {
+    margin-right: 1.4rem;
+    margin-left: 0.075rem;
+  }
+  &:hover,
+  &:focus {
+    background-color: var(--accent-royal);
+    .mat-icon,
+    .link-list-item {
+      color: var(--white);
+    }
+    svg path {
+      fill: var(--white);
+    }
+  }
+}
+
+.list-item-active {
+  background-color: var(--accent-royal);
+  ::ng-deep {
+    .mdc-list-item__primary-text,
+    .mat-icon {
+      color: var(--white);
+    }
+    svg path {
+      fill: var(--white);
+    }
+  }
+}

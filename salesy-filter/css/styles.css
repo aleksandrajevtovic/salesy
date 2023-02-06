@@ -1,0 +1,28 @@
+@use "@angular/material" as mat;
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --accent-royal: #293fcc;
+  --accent-light: #1083e5;
+  --light-blue: #e3eafc;
+  --pale-blue: #f8fafd;
+  --icon-blue: #7b97be;
+  --black: #414852;
+  --gray: #747c99;
+  --white: #ffffff;
+  --accent-green: #07dd83;
+  --ff: "Jost", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  position: relative;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff);
+}

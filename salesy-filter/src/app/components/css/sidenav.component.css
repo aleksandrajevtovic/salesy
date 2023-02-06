@@ -1,0 +1,70 @@
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.sidenav-subheader {
+  color: #7f8793;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.mdc-list {
+  padding: 0 1rem;
+}
+
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 1rem;
+  color: var(--icon-blue);
+  font-size: 20px;
+}
+
+.mat-divider {
+  border-color: #c2d6f3;
+  border-top-width: 2px;
+}
+
+.link-list-item {
+  font-size: 0.9rem;
+}
+
+a.mdc-list-item {
+  border-radius: var(--radius-sm);
+  margin: 0.2rem 0;
+}
+
+a.mdc-list-item svg {
+  margin-right: 1.4rem;
+  margin-left: 0.075rem;
+}
+
+a.mdc-list-item:hover, a.mdc-list-item:focus {
+  background-color: var(--accent-royal);
+}
+
+a.mdc-list-item:hover .mat-icon,
+a.mdc-list-item:hover .link-list-item, a.mdc-list-item:focus .mat-icon,
+a.mdc-list-item:focus .link-list-item {
+  color: var(--white);
+}
+
+a.mdc-list-item:hover svg path, a.mdc-list-item:focus svg path {
+  fill: var(--white);
+}
+
+.list-item-active {
+  background-color: var(--accent-royal);
+}
+
+.list-item-active ::ng-deep .mdc-list-item__primary-text,
+.list-item-active ::ng-deep .mat-icon {
+  color: var(--white);
+}
+
+.list-item-active ::ng-deep svg path {
+  fill: var(--white);
+}

@@ -1,0 +1,225 @@
+<div class="inner-content container-fluid">
+  <div class="page__box pt-3 mt-2">
+    <div class="left">
+      <h3>{{ title }}</h3>
+    </div>
+    <div class="button-row right">
+      <button mat-button>Assign Leads</button>
+      <button mat-stroked-button [matMenuTriggerFor]="ben">
+        <span> Ben </span>
+      </button>
+      <mat-menu #ben="matMenu">
+        <button mat-menu-item>
+          <mat-icon class="green-online">check_circle</mat-icon>
+          Verfügbar
+        </button>
+        <button mat-menu-item>
+          <mat-icon class="red-offline">fiber_manual_record</mat-icon>
+          Beschäftigt
+        </button>
+        <button mat-menu-item>
+          <mat-icon class="red-offline">remove_circle</mat-icon>
+          Nicht stören
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="page__content py-3 position-relative">
+    <div class="page__content-data">
+      <!-- Filter content goes here -->
+
+      <!-- alert bootstrap 5 -->
+      <app-alert></app-alert>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Finde Unternehmen, Die</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <mat-chip-grid #chipUnternehmen aria-label="Enter Unternehmens">
+            <mat-chip-row
+              color="primary"
+              selected
+              *ngFor="let unternehmen of unternehmens"
+              (removed)="remove(unternehmen)"
+              [editable]="true"
+              (edited)="edit(unternehmen, $event)"
+              [aria-description]="'press enter to edit ' + unternehmen.name"
+            >
+              {{ unternehmen.name }}
+              <button
+                matChipRemove
+                [attr.aria-label]="'remove ' + unternehmen.name"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-chip-row>
+            <mat-chip class="chip-outline">
+              <img
+                matChipAvatar
+                src="/assets/images/plus-circle.svg"
+                alt="plus icon"
+              />
+              Haben
+            </mat-chip>
+            <input
+              class="input-add"
+              placeholder="Haben"
+              [matChipInputFor]="chipUnternehmen"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="add($event)"
+            />
+          </mat-chip-grid>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- 2nd mat-card -->
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Finde Unternehmen, Die</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <mat-chip-grid #chipMitarbeiter aria-label="Enter Mitarbeiter">
+            <mat-chip-row
+              color="primary"
+              selected
+              *ngFor="let mitarbeiter of mitarbeiters"
+              (removed)="removeMitarbeiter(mitarbeiter)"
+              [editable]="true"
+              (edited)="editMitarbeiter(mitarbeiter, $event)"
+              [aria-description]="'press enter to edit ' + mitarbeiter.name"
+            >
+              {{ mitarbeiter.name }}
+              <button
+                matChipRemove
+                [attr.aria-label]="'remove ' + mitarbeiter.name"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-chip-row>
+            <mat-chip class="chip-outline">
+              <img
+                matChipAvatar
+                src="/assets/images/plus-circle.svg"
+                alt="plus icon"
+              />
+              Mitarbeiter haben
+            </mat-chip>
+            <input
+              class="input-add"
+              placeholder="Mitarbeiter haben"
+              [matChipInputFor]="chipMitarbeiter"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="addMitarbeiter($event)"
+            />
+          </mat-chip-grid>
+        </mat-card-content>
+      </mat-card>
+      <!-- end of 2nd mat-card -->
+
+      <!-- 3nd mat-card -->
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Finde Unternehmen, Die im</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <mat-chip-grid #chipBereich aria-label="Enter Bereich">
+            <mat-chip-row
+              color="primary"
+              selected
+              *ngFor="let bereich of bereichs"
+              (removed)="removeBereich(bereich)"
+              [editable]="true"
+              (edited)="editBereich(bereich, $event)"
+              [aria-description]="'press enter to edit ' + bereich.name"
+            >
+              {{ bereich.name }}
+              <button
+                matChipRemove
+                [attr.aria-label]="'remove ' + bereich.name"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-chip-row>
+            <mat-chip class="chip-outline">
+              <img
+                matChipAvatar
+                src="/assets/images/plus-circle.svg"
+                alt="plus icon"
+              />
+              Bereich tätig sind
+            </mat-chip>
+            <input
+              class="input-add"
+              placeholder="Bereich tätig sind"
+              [matChipInputFor]="chipBereich"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="addBereich($event)"
+            />
+          </mat-chip-grid>
+        </mat-card-content>
+      </mat-card>
+      <!-- end of 3nd mat-card -->
+
+      <!-- 4nd mat-card -->
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Deine Ansprechperson ist der/die</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <mat-chip-grid #chipAnsprechperson aria-label="Enter Ansprechperson">
+            <mat-chip-row
+              color="primary"
+              selected
+              *ngFor="let ansprechperson of ansprechpersonen"
+              (removed)="removeAnsprechperson(ansprechperson)"
+              [editable]="true"
+              (edited)="editAnsprechperson(ansprechperson, $event)"
+              [aria-description]="'press enter to edit ' + ansprechperson.name"
+            >
+              {{ ansprechperson.name }}
+              <button
+                matChipRemove
+                [attr.aria-label]="'remove ' + ansprechperson.name"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-chip-row>
+            <mat-chip class="chip-outline">
+              <img
+                matChipAvatar
+                src="/assets/images/plus-circle.svg"
+                alt="plus icon"
+              />
+              Hinzufügen
+            </mat-chip>
+            <input
+              class="input-add"
+              placeholder="Hinzufügen"
+              [matChipInputFor]="chipAnsprechperson"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="addAnsprechperson($event)"
+            />
+          </mat-chip-grid>
+        </mat-card-content>
+      </mat-card>
+      <!-- end of 4nd mat-card -->
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <button mat-raised-button class="btn btn-save">Speichern</button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.trial-period-wrapper {
+  margin: 1rem;
+  background: #d1d9f7;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  position: relative;
+  margin-top: 7rem;
+}
+
+.trial-period-wrapper h2 {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--black);
+  line-height: 1.5;
+  margin-top: 3rem;
+}
+
+.trial-period-wrapper img {
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: var(--accent-royal);
+  color: var(--white);
+  font-size: 0.9rem;
+}
