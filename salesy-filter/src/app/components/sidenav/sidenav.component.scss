@@ -42,6 +42,18 @@ a.mdc-list-item {
     svg path {
       fill: var(--white);
     }
+    .kunden-icon {
+      rect {
+        &:first-child {
+          fill: var(--white);
+        }
+      }
+      #steps {
+        rect {
+          fill: var(--icon-blue);
+        }
+      }
+    }
   }
 }
 

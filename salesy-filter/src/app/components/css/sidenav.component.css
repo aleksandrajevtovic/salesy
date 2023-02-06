@@ -56,6 +56,14 @@ a.mdc-list-item:hover svg path, a.mdc-list-item:focus svg path {
   fill: var(--white);
 }
 
+a.mdc-list-item:hover .kunden-icon rect:first-child, a.mdc-list-item:focus .kunden-icon rect:first-child {
+  fill: var(--white);
+}
+
+a.mdc-list-item:hover .kunden-icon #steps rect, a.mdc-list-item:focus .kunden-icon #steps rect {
+  fill: var(--icon-blue);
+}
+
 .list-item-active {
   background-color: var(--accent-royal);
 }
